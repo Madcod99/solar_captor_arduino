@@ -108,6 +108,6 @@ String readDHT()
   result += "}";
 
   // return the result of the lecture
-  //return result;
-  return "{DHT0 : 12, DHT1 : 11}";
+  return result;
+  //return "{DHT0 : 12, DHT1 : 11}";
 }
