@@ -16,8 +16,8 @@ unsigned long lastTime = 0;
 // Set timer to 5 seconds (5000)
 unsigned long timerDelay = 5000;
 
-const String espName = "esp1";
-int value;
+// const String espName = "esp1";
+// int value;
 
 void setup()
 {

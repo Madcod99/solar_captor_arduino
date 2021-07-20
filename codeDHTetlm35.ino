@@ -27,28 +27,30 @@ void setup()
 
 void loop()
 {
-  string resultTotal = "{";
+  String resultTotal = "{";
   resultTotal += "\"lm35\":";
   resultTotal += readLM();
   resultTotal += ",";
-  delay(1000);
+  //delay(1000);
   resultTotal += "\"dht\":";
   resultTotal += readDHT();
-  resultTotal = "}";
+  resultTotal += "}";
   Serial.println(resultTotal);
+  //Serial.println("Hello");
   delay(3000);
 }
 
-float computeReadOfLm(int pin)
+String computeReadOfLm(int pin)
 {
   float xVal = analogRead(pin);
   reading = (xVal * 500.0) / 1024;
-  return reading;
+  //return String(reading,2);
+  return String(reading ,2);
 }
 
-string readLM()
+String readLM()
 {
-  string result = "";
+  String result = "";
   result += "{";
 
   result += "\"Tv1\":\"" + computeReadOfLm(0) + "\",";
@@ -76,7 +78,7 @@ string readLM()
   return result;
 }
 
-string readDHT()
+String readDHT()
 {
   // lecture de chaque dht
   float h0 = dht0.readHumidity();
@@ -88,23 +90,24 @@ string readDHT()
   // verification de la lecture
   if (isnan(h0) && isnan(h1) && isnan(h2) && isnan(h3) && isnan(h4))
   {
-    // Serial.println("Erreur");
-    return "Erreur";
+    Serial.println("Erreur");
+    //return "Erreur";
   }
 
   // building the string result
-  string result = "";
+  String result = "";
 
   result += "{";
 
-  result += "\"DHT0\":\"" + h0 + "\",";
-  result += "\"DHT1\":\"" + h1 + "\",";
-  result += "\"DHT2\":\"" + h2 + "\",";
-  result += "\"DHT3\":\"" + h3 + "\",";
-  result += "\"DHT4\":\"" + h4 + "\"";
+  result += "\"DHT0\":\"" + String(h0, 2) + "\",";
+  result += "\"DHT1\":\"" + String(h1,2) + "\",";
+  result += "\"DHT2\":\"" + String(h2,2) + "\",";
+  result += "\"DHT3\":\"" + String(h3,2) + "\",";
+  result += "\"DHT4\":\"" + String(h4,2) + "\"";
 
   result += "}";
 
   // return the result of the lecture
   return result;
+  //return "{DHT0 : 12, DHT1 : 11}";
 }
