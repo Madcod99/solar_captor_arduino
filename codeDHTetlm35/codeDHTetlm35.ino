@@ -66,12 +66,12 @@ String readLM()
   result += "\"Tab5\":\"" + computeReadOfLm(9) + "\",";
 
   result += "\"Te1\":\"" + computeReadOfLm(10) + "\",";
-  result += "\"Te1\":\"" + computeReadOfLm(11) + "\",";
-  result += "\"Te1\":\"" + computeReadOfLm(12) + "\",";
+  result += "\"Te2\":\"" + computeReadOfLm(11) + "\",";
+  result += "\"Te3\":\"" + computeReadOfLm(12) + "\",";
 
   result += "\"Ts1\":\"" + computeReadOfLm(13) + "\",";
-  result += "\"Ts1\":\"" + computeReadOfLm(14) + "\",";
-  result += "\"Ts1\":\"" + computeReadOfLm(15) + "\"";
+  result += "\"Ts2\":\"" + computeReadOfLm(14) + "\",";
+  result += "\"Ts3\":\"" + computeReadOfLm(15) + "\"";
 
   result += "}";
 
